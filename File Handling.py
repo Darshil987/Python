@@ -2,11 +2,29 @@ try:
     a = input("Enter File Name:")
     f = open(a, 'rt')
     if f.read:
-        b = input("File Found.Do you want to read (Y or N):")
-        if b == 'y' or b == 'Y':
+        b = input("File Found.Do you want to read or write:")
+        if b == 'read' or b == 'Read':
             print(f.read())
+        elif b == 'write' or b == 'write':
+            c = input("Do you want to append or write(replace) content (A or W):")
+            if c == 'a' or c == 'A':
+                d = input("Enter File Content you want to append:")
+                f = open(a, 'a')
+                if f.write(d):
+                    print("Append to file successfully")
+                else:
+                    print("Error. Please try again.")
+            elif c == 'w' or c == 'W':
+                d = input("Enter File Content you want to write:")
+                f = open(a, 'w')
+                if f.write(d):
+                    print("Write to file successfully")
+                else:
+                    print("Error. Please try again.")
+            else:
+                print("Please enter UPPERCASE/lowercase (A or W) only")
         else:
-            print("Ok Bye, Have a nice day")
+            print("Please enter CamelCase/lowercase (Read/read or Write/write)")
     f.close()
 
 except FileNotFoundError:
@@ -27,6 +45,6 @@ except FileNotFoundError:
         except FileExistsError:
             print("File already exists")
     elif a == 'N' or a == 'n':
-        print("Thank You, Have a nice day")
+        print("Thank You, Have a nice day.")
     else:
         print("Please enter Uppercase/lowercase (Y or N)")
