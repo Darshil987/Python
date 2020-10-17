@@ -3,10 +3,8 @@ import mysql.connector as mcom
 conn = mcom.connect(host="localhost", user="root", password="", database="abc")
 if conn:
     cursor = conn.cursor()
-    sql = "SELECT * FROM login ORDER BY password"
+    sql = "DELETE FROM login WHERE username='Darshil'"
     cursor.execute(sql)
-    x = cursor.fetchall()
-    for i in x:
-        print(i)
+    conn.commit()
 else:
     print("Error")
