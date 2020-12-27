@@ -6,8 +6,6 @@ mydb = myclient['test']
 
 mycol = mydb['customers']
 
-myquery = {"name": {"$regex": "^D"} }
-
-for x in mycol.find(myquery):
+for x in mycol.find().sort("EnNO"):
     print(x)
 
