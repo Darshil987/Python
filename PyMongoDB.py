@@ -6,11 +6,12 @@ mydb = myclient['test']
 
 mycol = mydb['customers']
 
-dict = {
-    "name": "Darshil",
-    "EnNO": 170820107021,
-}
-x = mycol.insert_one(dict)
+list =[
+    {"name": "Darshil", "EnNO": 170820107021 },
+    {"name": "ABC", "EnNO": 1234 },
+    {"name": "DEF", "EnNO": 5678 }
+]
+x = mycol.insert_many(list)
 
 if x:
     print("Enter Successfully")
