@@ -6,7 +6,8 @@ mydb = myclient['test']
 
 mycol = mydb['customers']
 
-myquery = {"EnNO": 170820107021}
+myquery = {"name": {"$gt": "D"} }
+
 for x in mycol.find(myquery):
     print(x)
 
