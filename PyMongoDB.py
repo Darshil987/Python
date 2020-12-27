@@ -6,9 +6,6 @@ mydb = myclient['test']
 
 mycol = mydb['customers']
 
-myquery = {"name": "Darshil"}
+x = mycol.delete_many({})
 
-mycol.delete_many(myquery)
-
-for x in mycol.find():
-    print(x)
+print(x.deleted_count)
