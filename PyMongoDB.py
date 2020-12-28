@@ -35,9 +35,7 @@ if y.upper() == "INSERT":
         pass
     x = x['_id'] + 1
 
-    val = {
-        "_id": x, "name": input("Enter your name: "), "Country": input("Enter Your Country: ")
-    }
+    val = {"_id": x, "name": input("Enter your name: "), "Country": input("Enter Your Country: ")}
     insert(val)
 elif y.upper() == "DELETE":
     val = {"name": input("Enter your name: ")}
